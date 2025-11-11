@@ -1,5 +1,4 @@
 import React from 'react';
-import {Apple, Play} from 'lucide-react';
 
 const Hero: React.FC = () => {
     return (
@@ -39,9 +38,14 @@ const Hero: React.FC = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
                         {/* Download Button */}
                         <button
-                            className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center gap-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl">
-                            <Apple className="w-5 h-5"/>
-                            Download Now
+                            className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-2xl flex items-center gap-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
+                        >
+                            <div className="flex items-center gap-2">
+                                <img src="/logo/apple-logo.svg" alt="Apple logo" className="w-5 h-5" />
+                                <span className="text-gray-400">|</span>
+                                <img src="/logo/android-logo.svg" alt="Android logo" className="w-5 h-5" />
+                            </div>
+                            <span>Download Now</span>
                         </button>
                     </div>
                 </div>
