@@ -16,7 +16,7 @@ export default function Header() {
                 <div className="flex h-20 items-center justify-between">
                     {/* Left: Brand */}
                     <div className="flex items-center gap-10">
-                        <Link href="/" className="flex items-center gap-2">
+                        <Link href="/public" className="flex items-center gap-2">
                             <LogoIcon className="h-7 w-7 text-indigo-500" />
                             <span className="text-xl font-semibold text-slate-900 dark:text-white">
                                 Appline
