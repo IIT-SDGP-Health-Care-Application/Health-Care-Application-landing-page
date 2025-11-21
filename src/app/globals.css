@@ -1,8 +1,49 @@
 @import "tailwindcss";
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-    padding: 0;
-    margin: 0;
+    /* --- Your Fixed Palette --- */
+    --color-mirage-50: #f1f6fd;
+    --color-mirage-100: #dfebfa;
+    --color-mirage-200: #c6ddf7;
+    --color-mirage-300: #9fc7f1;
+    --color-mirage-400: #72a8e8;
+    --color-mirage-500: #5189e0;
+    --color-mirage-600: #3c6ed4;
+    --color-mirage-700: #335ac2;
+    --color-mirage-800: #2f4a9e;
+    --color-mirage-900: #2a417e;
+    --color-mirage-950: #101629;
+
+    /* --- Base Utility --- */
+    --color-white: #ffffff;
+}
+
+@theme {
+    /* --- Backgrounds (From your snippet) --- */
+    --color-b-primary: var(--color-mirage-950);
+    --color-b-secondary: var(--color-mirage-500);
+    --color-b-surface: var(--color-mirage-50);
+    --color-b-accent: var(--color-mirage-200);
+
+    /* --- Component Colors --- */
+    /* Used for main buttons or active states. 600 is vibrant enough to pop against 50 or 950 */
+    --color-primary: var(--color-mirage-600);
+
+    /* Used for secondary actions. 800 adds depth without being as dark as the bg-primary */
+    --color-secondary: var(--color-mirage-800);
+
+    /* Used for subtle backgrounds or card headers */
+    --color-background-light: var(--color-mirage-50);
+    --color-surface-light: var(--color-mirage-100);
+
+    /* --- Text & Accents --- */
+    /* Darkest blue for high contrast text on light surfaces */
+    --color-text-default: var(--color-mirage-950);
+
+    /* Lightest blue for text on dark backgrounds (bg-primary) */
+    --color-text-inverted: var(--color-mirage-50);
+
+    /* A middle ground for icons or borders */
+    --color-accent-medium: var(--color-mirage-400);
 }
