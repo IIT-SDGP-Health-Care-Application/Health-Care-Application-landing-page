@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
     return (
-        <section className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 relative overflow-hidden">
+        <section className="min-h-screen  relative overflow-hidden">
             <div
                 className="container mx-auto px-6 py-20 flex flex-col lg:flex-row items-center justify-between min-h-screen">
                 {/* Left Content */}

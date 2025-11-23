@@ -47,3 +47,7 @@
     /* A middle ground for icons or borders */
     --color-accent-medium: var(--color-mirage-400);
 }
+
+body{
+    background-color: var(--color-text-inverted);
+}
