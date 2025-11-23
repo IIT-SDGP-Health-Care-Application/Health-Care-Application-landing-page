@@ -28,7 +28,8 @@ const TeamMemberCard = ({
     };
 
     return (
-        <div className="group relative overflow-hidden rounded-3xl transition-all duration-300">
+        <div className="group relative overflow-hidden rounded-3xl transition-all duration-300 
+        ">
             <div className="aspect-[3/4] overflow-hidden">
                 <img
                     src={imageUrl}
@@ -48,15 +49,7 @@ const TeamMemberCard = ({
                 <h3 className="text-xl font-bold text-foreground">{name}</h3>
                 <p className="mb-3 text-sm font-medium text-primary">{role}</p>
                 <div className="flex gap-3">
-                    {socialLinks?.facebook && (
-                        <a
-                            href={socialLinks.facebook}
-                            className="text-muted-foreground transition-colors hover:text-primary"
-                            aria-label="Facebook"
-                        >
-                            <Facebook className="h-5 w-5"/>
-                        </a>
-                    )}
+                    
                     {socialLinks?.github && (
                         <a
                             href={socialLinks.github}
