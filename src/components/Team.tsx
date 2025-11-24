@@ -3,12 +3,7 @@ import TeamMemberCard from "./TeamMemberCard";
 
 const teamMembers = [
 
-    //Kaludewa Premawardana 	- 20234110
-// Team Members : 	Sadun Sudara 			- 20233068
-// Sandaru Senevirathne 		- 20232351
-// Ushalka Kapugamage 	- 20232076
-// Methasa Wickramasinghe 	- 20231544
-// Musharah Altaf 	
+
     {
         name: "Kaludewa Premawardana",
         role: "",
@@ -27,7 +22,7 @@ const teamMembers = [
         role: "",
         description: "Pop music lover, seeks joy and exciting pop concerts",
         imageUrl: "/images/team-member-2.png",
-        accentColor: "purple" as const,
+        accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
             github: "#",
@@ -39,7 +34,7 @@ const teamMembers = [
         role: "",
         description: "Bookworm, creative software developer with precision",
         imageUrl: "/images/team-member-3.jpeg",
-        accentColor: "pink" as const,
+        accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
             github: "#",
@@ -50,8 +45,8 @@ const teamMembers = [
         name: "Ushalka Kapugamage ",
         role: "",
         description: "Bookworm, creative software developer with precision",
-        imageUrl: "/images/team-member-4.jpeg",
-        accentColor: "pink" as const,
+        imageUrl: "/images/team-member-4.png",
+        accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
             github: "#",
@@ -62,8 +57,8 @@ const teamMembers = [
         name: "Methasa Wickramasinghe",
         role: "",
         description: "Bookworm, creative software developer with precision",
-        imageUrl: "/images/team-member-1.jpg",
-        accentColor: "pink" as const,
+        imageUrl: "/images/team-member-5.png",
+        accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
             github: "#",
@@ -74,8 +69,8 @@ const teamMembers = [
         name: "Sadun Sudara ",
         role: "",
         description: "Bookworm, creative software developer with precision",
-        imageUrl: "/images/team-member-1.jpg",
-        accentColor: "pink" as const,
+        imageUrl: "/images/team-member-6.png",
+        accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
             github: "#",
