@@ -13,7 +13,7 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/yenulimehansa24",
             linkedin: "#",
         },
     },
@@ -25,7 +25,7 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/Mush-A",
             linkedin: "#",
         },
     },
@@ -37,7 +37,7 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/Githmaz",
             linkedin: "#",
         },
     },
@@ -49,7 +49,7 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/ushalkakapugamage",
             linkedin: "#",
         },
     },
@@ -61,7 +61,7 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/Methasa",
             linkedin: "#",
         },
     },
@@ -73,7 +73,7 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/sandunsudara",
             linkedin: "#",
         },
     },
