@@ -53,6 +53,7 @@ const TeamMemberCard = ({
                     {socialLinks?.github && (
                         <a
                             href={socialLinks.github}
+                            target="_blank"
                             className="text-muted-foreground transition-colors hover:text-primary"
                             aria-label="GitHub"
                         >
@@ -62,6 +63,7 @@ const TeamMemberCard = ({
                     {socialLinks?.linkedin && (
                         <a
                             href={socialLinks.linkedin}
+                            target="_blank"
                             className="text-muted-foreground transition-colors hover:text-primary"
                             aria-label="LinkedIn"
                         >
