@@ -62,7 +62,7 @@ const teamMembers = [
         socialLinks: {
             facebook: "#",
             github: "https://github.com/Methasa",
-            linkedin: "#",
+            linkedin: "https://www.linkedin.com/in/methasa-wickramasinghe-36865a243/",
         },
     },
     {
