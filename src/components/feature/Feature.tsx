@@ -55,9 +55,9 @@ const containerVariants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.15,
-            delayChildren: 0.2,
-        },
-    },
+            delayChildren: 0.2
+        }
+    }
 };
 
 const itemVariants = {
@@ -71,10 +71,9 @@ const itemVariants = {
         y: 0,
         scale: 1,
         transition: {
-            duration: 0.8,
-            ease: "easeOut",
-        },
-    },
+            duration: 0.8
+        }
+    }
 };
 
 const titleVariants = {
@@ -83,10 +82,9 @@ const titleVariants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.6,
-            ease: "easeOut",
-        },
-    },
+            duration: 0.6
+        }
+    }
 };
 
 export default function Features() {
@@ -97,12 +95,10 @@ export default function Features() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 640);
-        };
+        const checkMobile = () => setIsMobile(window.innerWidth < 640);
         checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
     useEffect(() => {
@@ -112,7 +108,9 @@ export default function Features() {
         const section = sectionRef.current;
 
         const handleWheel = (e: WheelEvent) => {
-            const isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
+            const isAtEnd =
+                carousel.scrollLeft >=
+                carousel.scrollWidth - carousel.clientWidth - 10;
 
             if (!isAtEnd || e.deltaY < 0) {
                 e.preventDefault();
@@ -121,12 +119,14 @@ export default function Features() {
         };
 
         const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
+            entries => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        section.addEventListener('wheel', handleWheel, {passive: false});
+                        section.addEventListener("wheel", handleWheel, {
+                            passive: false
+                        });
                     } else {
-                        section.removeEventListener('wheel', handleWheel);
+                        section.removeEventListener("wheel", handleWheel);
                     }
                 });
             },
@@ -137,22 +137,26 @@ export default function Features() {
 
         return () => {
             observer.disconnect();
-            section.removeEventListener('wheel', handleWheel);
+            section.removeEventListener("wheel", handleWheel);
         };
     }, [isMobile]);
 
     return (
         <section className="py-20 bg-gray-50" id="features" ref={sectionRef}>
             <div className="max-w-7xl mx-auto px-6 text-center" ref={ref}>
+                {/* Title */}
                 <motion.div
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={titleVariants}
+                    transition={{ease: "easeOut"}}
                 >
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">Key Features</h2>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Key Features
+                    </h2>
                     <p className="text-lg text-gray-600 mb-12">
-                        Discover how MediSync simplifies your health journey through smart technology and real-time
-                        care.
+                        Discover how MediSync simplifies your health journey through
+                        smart technology and real-time care.
                     </p>
                 </motion.div>
 
@@ -163,10 +167,11 @@ export default function Features() {
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
                 >
-                    {features.map((feature, index) => (
+                    {features.map(feature => (
                         <motion.div
                             key={feature.title}
                             variants={itemVariants}
+                            transition={{ease: "easeOut"}}
                             className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
                             whileHover={{
                                 y: -8,
@@ -196,7 +201,10 @@ export default function Features() {
                     <div
                         ref={carouselRef}
                         className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-6 px-6 gap-6"
-                        style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
+                        style={{
+                            scrollbarWidth: "none",
+                            msOverflowStyle: "none"
+                        }}
                     >
                         {features.map((feature, index) => (
                             <motion.div
@@ -204,7 +212,11 @@ export default function Features() {
                                 className="flex-shrink-0 w-full snap-center p-8 bg-white rounded-2xl shadow-md"
                                 initial={{opacity: 0, scale: 0.95}}
                                 animate={{opacity: 1, scale: 1}}
-                                transition={{duration: 0.5, delay: index * 0.1}}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                    ease: "easeOut"
+                                }}
                             >
                                 <div className="flex items-center justify-center mb-4">
                                     {feature.icon}
@@ -212,7 +224,9 @@ export default function Features() {
                                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                                     {feature.title}
                                 </h3>
-                                <p className="text-gray-600">{feature.description}</p>
+                                <p className="text-gray-600">
+                                    {feature.description}
+                                </p>
                             </motion.div>
                         ))}
                     </div>
