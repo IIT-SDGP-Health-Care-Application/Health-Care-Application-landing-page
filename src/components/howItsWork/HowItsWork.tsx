@@ -1,9 +1,13 @@
 'use client';
-import {cn}  from '@/lib/utils'
+import {cn} from '@/lib/utils'
 
 import React, {useRef} from 'react';
 import {motion, useScroll, useTransform} from 'framer-motion';
 import {CalendarClock, ShieldAlert, Smartphone, Watch} from 'lucide-react';
+import dashBoardImage from '@/../public/images/mobile/dashboard.png';
+import watchPair from '@/../public/images/mobile/watchPair.png';
+import notification from '@/../public/images/mobile/notification.png';
+import schedule from '@/../public/images/mobile/schedule.png';
 
 const STEPS = [
     {
@@ -12,7 +16,7 @@ const STEPS = [
         description: "Download the app and create your personal health account. Securely log in to access your dashboard and set up your emergency contacts.",
         icon: <Smartphone className="w-12 h-12 text-blue-500"/>,
         color: "bg-blue-50",
-        image: "https://placehold.co/600x400/e2e8f0/1e293b?text=Login+Screen"
+        image: dashBoardImage
     },
     {
         id: 2,
@@ -20,7 +24,7 @@ const STEPS = [
         description: "Seamlessly connect your smart wristband to your smartphone via Bluetooth. One-tap pairing ensures you are ready to go in seconds.",
         icon: <Watch className="w-12 h-12 text-indigo-500"/>,
         color: "bg-indigo-50",
-        image: "https://placehold.co/600x400/e0e7ff/3730a3?text=Bluetooth+Pairing"
+        image: watchPair
     },
     {
         id: 3,
@@ -28,7 +32,7 @@ const STEPS = [
         description: "Input your medication schedule. When it's time for a dose, your wristband will gently vibrate to remind you—never miss a pill again.",
         icon: <CalendarClock className="w-12 h-12 text-teal-500"/>,
         color: "bg-teal-50",
-        image: "https://placehold.co/600x400/ccfbf1/115e59?text=Vibration+Alert"
+        image: schedule
     },
     {
         id: 4,
@@ -36,7 +40,7 @@ const STEPS = [
         description: "The wristband monitors movement in real-time. If a fall is detected, it automatically alerts your listed family members with your location.",
         icon: <ShieldAlert className="w-12 h-12 text-rose-500"/>,
         color: "bg-rose-50",
-        image: "https://placehold.co/600x400/ffe4e6/9f1239?text=Fall+Detection+Alert"
+        image: notification
     }
 ];
 
@@ -86,22 +90,21 @@ export default function HowItWorks() {
                     </div>
 
                     <div
-                        className="max-w-6xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
+                        className="max-w-7xl w-4/5 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
 
                         {/* LEFT SIDE IMAGES */}
                         <div
-                            className="relative w-full aspect-square max-h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-slate-100 border border-slate-200">
-
+                            className="relative aspect-[9/16] max-h-[700px] overflow-hidden bg-transparent rounded-4xl">
                             {STEPS.map((step, index) => (
                                 <motion.div
                                     key={step.id}
-                                    className="absolute inset-0 flex items-center justify-center"
+                                    className="absolute inset-0 flex items-center justify-center shadow-2xl rounded-4xl"
                                     style={transforms[index]}
                                 >
                                     <img
-                                        src={step.image}
+                                        src={typeof step.image === "string" ? step.image : step.image.src}
                                         alt={step.title}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-fill"
                                     />
                                 </motion.div>
                             ))}
@@ -109,7 +112,6 @@ export default function HowItWorks() {
 
                         {/* RIGHT SIDE CONTENT */}
                         <div className="relative h-full flex items-center">
-
                             {STEPS.map((step, index) => (
                                 <motion.div
                                     key={step.id}
