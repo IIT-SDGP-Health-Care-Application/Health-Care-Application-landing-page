@@ -13,8 +13,8 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
-            linkedin: "#",
+            github: "https://github.com/yenulimehansa24",
+            linkedin: "https://www.linkedin.com/in/yenuli?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
         },
     },
     {
@@ -25,8 +25,8 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
-            linkedin: "#",
+            github: "https://github.com/Mush-A",
+            linkedin: "https://www.linkedin.com/in/mushraf-altaf/",
         },
     },
     {
@@ -37,8 +37,8 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
-            linkedin: "#",
+            github: "https://github.com/Githmaz",
+            linkedin: "https://www.linkedin.com/in/sandaru-senevirathne/",
         },
     },
     {
@@ -49,19 +49,19 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
-            linkedin: "#",
+            github: "https://github.com/ushalkakapugamage",
+            linkedin: "https://www.linkedin.com/in/ushalka-kapugamage/",
         },
     },
     {
         name: "Methasa Wickramasinghe",
         role: "",
         description: "Bookworm, creative software developer with precision",
-        imageUrl: "/images/team-member-5.png",
+        imageUrl: "/images/team-member-5.jpeg",
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
+            github: "https://github.com/Methasa",
             linkedin: "#",
         },
     },
@@ -73,8 +73,8 @@ const teamMembers = [
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
-            github: "#",
-            linkedin: "#",
+            github: "https://github.com/sandunsudara",
+            linkedin: "https://www.linkedin.com/in/sandunsudara/",
         },
     },
 ];
