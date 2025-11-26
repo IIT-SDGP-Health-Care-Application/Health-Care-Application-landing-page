@@ -14,7 +14,7 @@ const teamMembers = [
         socialLinks: {
             facebook: "#",
             github: "https://github.com/yenulimehansa24",
-            linkedin: "#",
+            linkedin: "https://www.linkedin.com/in/yenuli?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
         },
     },
     {
@@ -26,7 +26,7 @@ const teamMembers = [
         socialLinks: {
             facebook: "#",
             github: "https://github.com/Mush-A",
-            linkedin: "#",
+            linkedin: "https://www.linkedin.com/in/mushraf-altaf/",
         },
     },
     {
@@ -38,7 +38,7 @@ const teamMembers = [
         socialLinks: {
             facebook: "#",
             github: "https://github.com/Githmaz",
-            linkedin: "#",
+            linkedin: "https://www.linkedin.com/in/sandaru-senevirathne/",
         },
     },
     {
@@ -50,14 +50,14 @@ const teamMembers = [
         socialLinks: {
             facebook: "#",
             github: "https://github.com/ushalkakapugamage",
-            linkedin: "#",
+            linkedin: "https://www.linkedin.com/in/ushalka-kapugamage/",
         },
     },
     {
         name: "Methasa Wickramasinghe",
         role: "",
         description: "Bookworm, creative software developer with precision",
-        imageUrl: "/images/team-member-5.png",
+        imageUrl: "/images/team-member-5.jpeg",
         accentColor: "blue" as const,
         socialLinks: {
             facebook: "#",
@@ -74,7 +74,7 @@ const teamMembers = [
         socialLinks: {
             facebook: "#",
             github: "https://github.com/sandunsudara",
-            linkedin: "#",
+            linkedin: "https://www.linkedin.com/in/sandunsudara/",
         },
     },
 ];
