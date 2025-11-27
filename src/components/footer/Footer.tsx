@@ -4,6 +4,12 @@ import { ArrowUp } from "lucide-react";
 const Footer = () => {
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
+    const siteItems = [
+        {href: "#features", label: "Features"},
+        {href: "#how-it-works", label: "How It Works"},
+        {href: "#team", label: "Team"},
+    ];
+
     return (
         // 1. Background: Uses Mirage 950 (b-primary)
         // 2. Text: Uses Mirage 50 (text-inverted) for base readability
@@ -34,11 +40,11 @@ const Footer = () => {
                     <div>
                         <h3 className="font-semibold text-lg mb-4 text-white">Sitemap</h3>
                         <ul className="space-y-3">
-                            {["About Us", "Services", "Contact"].map(item => (
-                                <li key={item}>
+                            {siteItems.map(item => (
+                                <li key={item.label}>
                                     {/* Links: Mirage 300 base, White on hover */}
-                                    <a className="text-mirage-300 hover:text-white transition-colors cursor-pointer block">
-                                        {item}
+                                    <a className="text-mirage-300 hover:text-white transition-colors cursor-pointer block" href={item.href}>
+                                        {item.label}
                                     </a>
                                 </li>
                             ))}

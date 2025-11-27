@@ -52,3 +52,12 @@ html , body{
     background-color: var(--color-text-inverted);
     scroll-behavior: smooth;
 }
+
+.carousel-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.carousel-scrollbar {
+    -ms-overflow-style: none;  /* IE & Edge */
+    scrollbar-width: none;      /* Firefox */
+}

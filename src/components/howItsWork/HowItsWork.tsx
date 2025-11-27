@@ -8,6 +8,7 @@ import dashBoardImage from '@/../public/images/mobile/dashboard.png';
 import watchPair from '@/../public/images/mobile/watchPair.png';
 import notification from '@/../public/images/mobile/notification.png';
 import schedule from '@/../public/images/mobile/schedule.png';
+// The HeroBackgroundDecoration import is present but unused in the component.
 
 const STEPS = [
     {
@@ -82,52 +83,63 @@ export default function HowItWorks() {
     return (
         <section className="w-full bg-white relative">
             <div ref={targetRef} className="relative h-[400vh]">
-                <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-20">
+                <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-8 md:py-16">
 
-                    <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-                        <h2 className="text-4xl font-bold text-slate-900">How MediSync Works</h2>
-                        <p className="text-slate-500 mt-4 text-lg">Four simple steps to complete peace of mind.</p>
+                    {/* Header is kept outside the main grid */}
+                    <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900">How MediSync Works</h2>
+                        <p className="text-slate-500 mt-2 md:mt-4 text-base md:text-lg">Four simple steps to complete peace of mind.</p>
                     </div>
 
+                    {/* Main Content Grid: grid-cols-1 (stacked) on mobile, lg:grid-cols-2 (side-by-side) on desktop */}
                     <div
                         className="max-w-7xl w-4/5 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
 
-                        {/* LEFT SIDE IMAGES */}
+                        {/* ROW 1 / COLUMN 1: IMAGE CONTAINER */}
                         <div
-                            className="relative aspect-[9/16] max-h-[700px] overflow-hidden bg-transparent rounded-4xl">
+                            // Mobile: h-[400px] (stacked), w-full, center alignment
+                            // Desktop: h-full (side-by-side), full height, no explicit width limit
+                            className="relative w-full  md:w-[400px] mx-auto h-[400px] lg:h-full lg:max-h-[700px] overflow-hidden bg-transparent rounded-2xl lg:rounded-4xl"
+                        >
                             {STEPS.map((step, index) => (
                                 <motion.div
                                     key={step.id}
-                                    className="absolute inset-0 flex items-center justify-center shadow-2xl rounded-4xl"
+                                    className="absolute inset-0 flex items-center justify-center rounded-2xl lg:shadow-2xl"
                                     style={transforms[index]}
                                 >
                                     <img
                                         src={typeof step.image === "string" ? step.image : step.image.src}
                                         alt={step.title}
-                                        className="w-full h-full object-fill"
+                                        // Mobile: object-contain to fit the small box
+                                        // Desktop: object-fill (original intent)
+                                        className="w-full h-full object-contain lg:object-fill"
                                     />
                                 </motion.div>
                             ))}
                         </div>
 
-                        {/* RIGHT SIDE CONTENT */}
-                        <div className="relative h-full flex items-center">
+                        {/* ROW 2 / COLUMN 2: CONTENT CARD CONTAINER */}
+                        <div
+                            // Mobile: fixed small height (stacked)
+                            // Desktop: h-full (side-by-side)
+                            className="relative h-[250px] lg:h-full flex items-center"
+                        >
                             {STEPS.map((step, index) => (
                                 <motion.div
                                     key={step.id}
                                     className="absolute inset-0 flex items-center"
                                     style={transforms[index]}
                                 >
-                                    <div className="p-6 rounded-2xl bg-white shadow-xl border border-slate-200 w-full">
+                                    <div className="p-4 md:p-6 rounded-2xl bg-white shadow-xl border border-slate-200 w-full">
                                         <div className="flex items-start gap-4">
-                                            <div className={cn("p-3 rounded-xl", step.color)}>
+                                            <div className={cn("p-2 md:p-3 rounded-xl flex-shrink-0", step.color)}>
                                                 {step.icon}
                                             </div>
                                             <div>
-                                                <h3 className="text-2xl font-bold mb-2 text-slate-900">
+                                                <h3 className="text-xl md:text-2xl font-bold mb-1 text-slate-900">
                                                     {step.title}
                                                 </h3>
-                                                <p className="text-lg leading-relaxed text-slate-600">
+                                                <p className="text-sm md:text-lg leading-relaxed text-slate-600">
                                                     {step.description}
                                                 </p>
                                             </div>
@@ -135,7 +147,6 @@ export default function HowItWorks() {
                                     </div>
                                 </motion.div>
                             ))}
-
                         </div>
 
                     </div>

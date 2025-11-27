@@ -1,10 +1,8 @@
-"use client";
+'use client';
 
 import {Bell, HeartPulse, LayoutDashboard, Shield, Users, Watch} from "lucide-react";
-import {JSX, useEffect, useRef, useState} from "react";
 import {motion, useInView} from "framer-motion";
-
-// --- INTERFACES & DATA (Same as before) ---
+import {JSX, useEffect, useRef, useState} from "react";
 
 interface Feature {
     icon: JSX.Element;
@@ -51,15 +49,11 @@ const features: Feature[] = [
     }
 ];
 
-// Combine the features for the visual loop: [Last, ...Original, First]
-// The first and last items are clones used to create the seamless jump effect.
 const looperFeatures = [
-    features[features.length - 1], // Clone of the last feature
-    ...features,                   // All original features
-    features[0]                    // Clone of the first feature
+    features[features.length - 1],
+    ...features,
+    features[0]
 ];
-
-// --- FRAMER MOTION VARIANTS (Same as before) ---
 
 const containerVariants = {
     hidden: {opacity: 0},
@@ -84,88 +78,72 @@ const titleVariants = {
     visible: {opacity: 1, y: 0, transition: {duration: 0.6}}
 };
 
-// --- MAIN COMPONENT ---
-
 export default function Features() {
     const ref = useRef(null);
     const carouselRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, {once: true, amount: 0.3});
-    // activeLooperIndex: Corresponds to the index in looperFeatures array.
-    // We start at index 1 to show the FIRST *original* feature (after the clone).
     const [activeLooperIndex, setActiveLooperIndex] = useState(1);
-
-    // isTransitioning: Used to briefly disable smooth scrolling during the loop jump.
     const [isTransitioning, setIsTransitioning] = useState(false);
 
-    // Auto-rotation logic
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveLooperIndex((current) => current + 1);
-        }, 5000); // Rotate every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
     }, []);
 
-    // Scroll and Infinite Loop Logic
     useEffect(() => {
         if (!carouselRef.current) return;
         const carousel = carouselRef.current;
         const totalOriginalFeatures = features.length;
         const scrollPosition = activeLooperIndex * carousel.clientWidth;
 
-        // 1. Initial Scroll (Smooth)
         carousel.scrollTo({
             left: scrollPosition,
             behavior: isTransitioning ? 'auto' : 'smooth'
         });
 
-        // 2. Handle the Infinite Loop Jump
         if (activeLooperIndex === totalOriginalFeatures + 1) {
-            // We've reached the clone of the first item, so prepare to jump back.
-            setTimeout(() => {
-                setIsTransitioning(true); // Disable smooth scroll temporarily
-                setActiveLooperIndex(1); // Jump back to the FIRST original item index (index 1)
-            }, 500); // Allow time for the 'smooth' scroll to the clone to finish (adjust timing if needed)
-        } else if (activeLooperIndex === 0) {
-            // We've scrolled back to the clone of the last item, jump to the last original item.
             setTimeout(() => {
                 setIsTransitioning(true);
-                setActiveLooperIndex(totalOriginalFeatures); // Jump to the LAST original item index
+                setActiveLooperIndex(1);
+            }, 500);
+        } else if (activeLooperIndex === 0) {
+            setTimeout(() => {
+                setIsTransitioning(true);
+                setActiveLooperIndex(totalOriginalFeatures);
             }, 500);
         } else if (isTransitioning) {
-            // After the jump is complete (i.e., activeLooperIndex is now 1 or totalOriginalFeatures), re-enable smooth scrolling.
             setIsTransitioning(false);
         }
     }, [activeLooperIndex, isTransitioning]);
 
-    // Function to calculate the real index for pagination indicators
     const getRealIndex = (looperIndex: number) => {
-        if (looperIndex === 0) return features.length - 1; // Last original item
-        if (looperIndex === features.length + 1) return 0; // First original item
+        if (looperIndex === 0) return features.length - 1;
+        if (looperIndex === features.length + 1) return 0;
         return looperIndex - 1;
     };
 
-
     return (
-        <section className="py-20 bg-background-light relative h-screen" id="features">
-            <div className="max-w-7xl mx-auto px-6 text-center" ref={ref}>
-                {/* Title (Same as before) */}
+        <section className="py-20 bg-background-light relative min-h-screen flex items-center" id="features">
+            <div className="max-w-7xl mx-auto px-6 text-center w-full" ref={ref}>
                 <motion.div
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={titleVariants}
                 >
-                    <h2 className="text-6xl font-bold text-secondary mb-4">
+                    <h2 className="text-5xl md:text-6xl font-bold text-secondary mb-4">
                         Key Features
                     </h2>
-                    <p className="text-lg text-gray-600 mb-12">
+                    <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
                         Discover how MediSync simplifies your health journey through smart technology.
                     </p>
                 </motion.div>
 
-                {/* Desktop GRID (sm: breakpoint and up) - Same as before */}
+                {/* Desktop Grid */}
                 <motion.div
-                    className="hidden sm:grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
+                    className="hidden sm:grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
@@ -174,34 +152,29 @@ export default function Features() {
                         <motion.div
                             key={f.title}
                             variants={itemVariants}
-                            className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow"
-                            whileHover={{y: -8}}
+                            className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow hover:shadow-xl transition-all duration-300"
+                            whileHover={{y: -8, scale: 1.02}}
                         >
-                            <div className="flex items-center mb-4">{f.icon}</div>
-                            <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                            <div className="flex items-center justify-center mb-4">{f.icon}</div>
+                            <h3 className="text-xl font-semibold text-card-foreground mb-3">
                                 {f.title}
                             </h3>
-                            <p className="text-gray-600">{f.description}</p>
+                            <p className="text-muted-foreground leading-relaxed">{f.description}</p>
                         </motion.div>
                     ))}
                 </motion.div>
 
-                {/* Mobile HORIZONTAL CAROUSEL (Below sm: breakpoint) */}
+                {/* Mobile Carousel */}
                 <div className="sm:hidden">
                     <div
                         ref={carouselRef}
-                        // Added `overflow-hidden` for better control, though `overflow-x-auto` is necessary
-                        // We rely on the `scrollbar-hide` style for hiding the scrollbar.
-                        className="flex overflow-x-auto scrollbar-hide -mx-6 px-60 gap-6"
+                        className="flex overflow-x-auto carousel-scrollbar -mx-6 px-6 gap-6 snap-x snap-mandatory pb-4"
                     >
-                        {/* MAP OVER THE LOOPER FEATURES FOR INFINITE SCROLL */}
                         {looperFeatures.map((f, i) => (
                             <motion.div
-                                // Key includes index 'i' because titles can be duplicated (clones)
                                 key={`${f.title}-${i}`}
-                                className="flex-shrink-0 w-full p-8 bg-white rounded-2xl shadow-md"
+                                className="flex-shrink-0 w-full p-8 bg-card  shadow-lg bg-white rounded-2xl hover:shadow-xl transition-all duration-300"
                                 initial={{opacity: 0, scale: 0.95}}
-                                // Note: We use the index 'i' for animation delay based on position
                                 animate={{opacity: 1, scale: 1}}
                                 transition={{
                                     duration: 0.5,
@@ -211,26 +184,24 @@ export default function Features() {
                                 <div className="flex items-center justify-center mb-4">
                                     {f.icon}
                                 </div>
-                                <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+                                <h3 className="text-xl font-semibold text-card-foreground mb-3">
                                     {f.title}
                                 </h3>
-                                <p className="text-gray-600">{f.description}</p>
+                                <p className="text-muted-foreground leading-relaxed">{f.description}</p>
                             </motion.div>
                         ))}
                     </div>
 
-                    {/* Simple Pagination/Indicators */}
-                    <div className="flex justify-center mt-6 space-x-2">
+                    <div className="flex justify-center mt-8 space-x-3">
                         {features.map((_, index) => (
                             <button
                                 key={index}
-                                // Check if the REAL index matches the current feature's index
-                                className={`w-3 h-3 rounded-full transition-all ${
+                                className={`h-3 rounded-full transition-all duration-300 hover:opacity-80 ${
                                     getRealIndex(activeLooperIndex) === index
-                                        ? "bg-indigo-600 w-6"
-                                        : "bg-gray-300"
+                                        ? "bg-primary w-10"
+                                        : "bg-b-accent w-3"
                                 }`}
-                                onClick={() => setActiveLooperIndex(index + 1)} // Set the looper index (index + 1)
+                                onClick={() => setActiveLooperIndex(index + 1)}
                                 aria-label={`Go to feature ${index + 1}`}
                             />
                         ))}
@@ -251,13 +222,6 @@ export default function Features() {
                     ></path>
                 </svg>
             </div>
-
-            {/* CSS to hide the scrollbar (as requested) */}
-            <style jsx>{`
-                .scrollbar-hide::-webkit-scrollbar {
-                    display: none;
-                }
-            `}</style>
         </section>
     );
 }
