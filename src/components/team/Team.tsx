@@ -1,4 +1,4 @@
-import { Users } from "lucide-react";
+import {Users} from "lucide-react";
 import TeamMemberCard from "./TeamMemberCard";
 
 const teamMembers = [
@@ -81,7 +81,7 @@ const teamMembers = [
 
 const Team = () => {
     return (
-        <section className="min-h-screen bg-background py-16 px-4">
+        <section className="min-h-screen bg-b-accent py-16 px-4">
             <div className="container mx-auto max-w-6xl">
                 <div className="mb-16 text-center">
                     <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
@@ -91,7 +91,7 @@ const Team = () => {
                     <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
                         Meet our team members
                     </h1>
-                    <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
+                    <p className="mx-auto max-w-2xl text-lg text-secondary leading-relaxed font-bold">
                         We Focus on the details of everything we do. All to help businesses
                         around the world Focus on what's most important to them.
                     </p>

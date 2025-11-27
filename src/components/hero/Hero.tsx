@@ -4,6 +4,7 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import appleLogo from '@/../public/images/logo/apple-logo.svg'
 import androidLogo from '@/../public/images/logo/android-logo.svg'
+import doctorAvatar from '@/../public/images/doctorAvatar.png'
 
 const Hero: React.FC = () => {
     return (
@@ -208,44 +209,24 @@ const Hero: React.FC = () => {
                                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20 w-24 sm:w-28 h-5 sm:h-6 bg-gray-900 rounded-b-xl"></div>
 
                                 {/* Blue Header Section */}
-                                <div className="absolute top-0 left-0 right-0 h-32 sm:h-36 md:h-40 bg-gradient-to-b from-blue-400 to-blue-300 rounded-t-[2rem] sm:rounded-t-[2.5rem]"></div>
+
 
                                 {/* Screen Content */}
-                                <div className="p-4 sm:p-5 md:p-6 pt-6 sm:pt-7 md:pt-8 h-full relative z-10 flex flex-col">
+                                <div className="z-10 relative flex flex-col">
+                                    <div
+                                        className="h-32 sm:h-36 md:h-40 bg-gradient-to-b from-blue-400 to-blue-300 rounded-[2rem] sm:rounded-[2.5rem]"></div>
                                     {/* Doctor Avatar */}
                                     <motion.div
-                                        className="flex justify-center mb-4 sm:mb-5 md:mb-6"
+                                        className="absolute top-4.5 left-1/3 transform -translate-x-1/2 z-10"
                                         initial={{opacity: 0, scale: 0.8}}
                                         animate={{opacity: 1, scale: 1}}
                                         transition={{duration: 0.5, delay: 1.5}}
                                     >
-                                        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 relative">
-                                            {/* Head */}
-                                            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-orange-200 rounded-full absolute top-0 left-2 overflow-hidden">
-                                                {/* Hair */}
-                                                <div className="absolute top-0 left-2 sm:left-3 w-12 sm:w-14 md:w-16 h-8 sm:h-10 md:h-12 bg-amber-900 rounded-t-full"></div>
-                                                {/* Face */}
-                                                <div className="absolute top-6 sm:top-8 md:top-10 left-1 sm:left-2 w-14 sm:w-16 md:w-20 h-12 sm:h-14 md:h-16 bg-orange-200 rounded-full">
-                                                    {/* Glasses */}
-                                                    <div className="absolute top-3 sm:top-4 left-0.5 sm:left-1 w-12 sm:w-14 md:w-16 h-5 sm:h-6 flex gap-1.5 sm:gap-2">
-                                                        <div className="w-5 sm:w-6 md:w-7 h-5 sm:h-6 md:h-7 border-2 border-black rounded-full bg-white/20"></div>
-                                                        <div className="w-5 sm:w-6 md:w-7 h-5 sm:h-6 md:h-7 border-2 border-black rounded-full bg-white/20"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {/* Doctor Coat */}
-                                            <div className="absolute bottom-0 left-0 w-20 sm:w-24 md:w-28 h-12 sm:h-16 md:h-20 bg-white rounded-t-2xl border-3 sm:border-4 border-teal-400">
-                                                {/* Stethoscope */}
-                                                <div className="absolute left-1.5 sm:left-2 top-1.5 sm:top-2 w-4 sm:w-5 h-6 sm:h-8 border-l-3 sm:border-l-4 border-b-3 sm:border-b-4 border-teal-500 rounded-bl-full"></div>
-                                                <div className="absolute right-1.5 sm:right-2 top-1.5 sm:top-2 w-4 sm:w-5 h-6 sm:h-8 border-r-3 sm:border-r-4 border-b-3 sm:border-b-4 border-teal-500 rounded-br-full"></div>
-                                                <div className="absolute bottom-0 right-2 sm:right-3 w-4 sm:w-5 h-4 sm:h-5 bg-gray-400 rounded-full border-2 border-gray-600"></div>
-                                            </div>
-                                        </div>
+                                        <img src={doctorAvatar.src} width={150}/>
                                     </motion.div>
-
                                     {/* Menu Items */}
                                     <motion.div
-                                        className="space-y-3 sm:space-y-4 flex-1"
+                                        className="space-y-3 sm:space-y-4 flex-1 mt-7 p-4"
                                         initial={{opacity: 0, y: 20}}
                                         animate={{opacity: 1, y: 0}}
                                         transition={{duration: 0.5, delay: 1.7}}
@@ -293,16 +274,18 @@ const Hero: React.FC = () => {
                                     </motion.div>
 
                                     {/* Group Overview Button */}
-                                    <motion.button
-                                        className="bg-blue-300 hover:bg-blue-400 text-white font-semibold py-3 sm:py-3.5 md:py-4 rounded-xl sm:rounded-2xl shadow-lg transition-colors mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base"
-                                        initial={{opacity: 0, y: 20}}
-                                        animate={{opacity: 1, y: 0}}
-                                        transition={{duration: 0.5, delay: 1.9}}
-                                        whileHover={{scale: 1.02}}
-                                        whileTap={{scale: 0.98}}
-                                    >
-                                        Group Overview
-                                    </motion.button>
+                                    <div className="p-4 w-full">
+                                        <motion.button
+                                            className="w-full bg-blue-300 hover:bg-blue-400 text-white font-semibold py-3 sm:py-3.5 md:py-4 rounded-xl sm:rounded-2xl shadow-lg transition-colors mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base"
+                                            initial={{opacity: 0, y: 20}}
+                                            animate={{opacity: 1, y: 0}}
+                                            transition={{duration: 0.5, delay: 1.9}}
+                                            whileHover={{scale: 1.02}}
+                                            whileTap={{scale: 0.98}}
+                                        >
+                                            Group Overview
+                                        </motion.button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

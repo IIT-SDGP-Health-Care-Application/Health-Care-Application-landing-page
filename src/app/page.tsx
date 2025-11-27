@@ -11,20 +11,20 @@ export default function Home() {
             <Header/>
             <Hero/>
 
-            <section id="features" className="scroll-mt-28">
+            <section id="features">
                 <Features/>
             </section>
 
-            <section id="how-it-works" className="scroll-mt-28">
+            <section id="how-it-works">
                  <HowItWorks />
             </section>
 
             {/* Team Section */}
-            <section id="team" className="scroll-mt-28">
+            <section id="team" >
                 <Team/>
             </section>
 
-            <section id="support" className="scroll-mt-28">
+            <section id="support">
                 <Footer/>
             </section>
         </main>
