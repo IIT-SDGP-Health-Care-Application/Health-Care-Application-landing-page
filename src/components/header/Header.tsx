@@ -23,17 +23,17 @@ export default function Header() {
 
     return (
         <header
-            className="z-50 w-4/5 mx-auto shadow-sm dark:bg-slate-900 rounded-3xl mt-3 bg-white/80 backdrop-blur-md">
+            className="absolute top-0  left-1/2 -translate-x-1/2 z-50 w-4/5 mx-auto shadow-sm dark:bg-slate-900 rounded-3xl mt-3 bg-white/80 backdrop-blur-md">
             <div className="w-full px-6 sm:px-10">
                 <div className="flex h-20 items-center justify-between">
                     {/* Left: Brand */}
                     <div className="flex items-center gap-10">
-                        <Link href="/public" className="flex items-center gap-2">
+                        <div className="flex items-center gap-2">
                             <LogoIcon className="h-7 w-7 text-indigo-500" />
                             <span className="text-xl font-semibold text-slate-900 dark:text-white">
                                 MediSync
                             </span>
-                        </Link>
+                        </div>
                     </div>
                     <nav className="hidden lg:block">
                         <ul className="flex items-center gap-8 text-[18px] font-medium">

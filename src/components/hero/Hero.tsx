@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
                     transition={{duration: 0.8, ease: "easeOut"}}
                 >
                     {/* Main Heading */}
-                    <div className="flex flex-col lg:flex-row items-center lg:items-center gap-3 sm:gap-4">
+                    <div className="flex flex-col lg:flex-row items-center lg:items-center gap-3 sm:gap-4 mt-10">
                         {/* Left - Big "Stay" */}
                         <motion.h1
                             className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold text-gray-900 leading-none"
@@ -186,7 +186,7 @@ const Hero: React.FC = () => {
 
                     {/* Phone Frame - Scaled up and responsive */}
                     <motion.div
-                        className="relative z-10"
+                        className="relative z-10 mt-10"
                         animate={{
                             y: [0, -10, 0]
                         }}
