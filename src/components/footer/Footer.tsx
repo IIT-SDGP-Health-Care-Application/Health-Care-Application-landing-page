@@ -30,10 +30,10 @@ const Footer = () => {
                             Compassionate care, innovative solutions.
                         </p>
 
-                        {/* Button: Uses Primary (Mirage 600) for pop, with White text */}
-                        <button className="bg-primary text-white font-semibold px-8 py-3 rounded-full transition duration-300 hover:bg-mirage-500 hover:shadow-lg hover:shadow-mirage-900/50 cursor-pointer">
-                            Download App
-                        </button>
+                        {/*/!* Button: Uses Primary (Mirage 600) for pop, with White text *!/*/}
+                        {/*<button className="bg-primary text-white font-semibold px-8 py-3 rounded-full transition duration-300 hover:bg-mirage-500 hover:shadow-lg hover:shadow-mirage-900/50 cursor-pointer">*/}
+                        {/*    Download App*/}
+                        {/*</button>*/}
                     </div>
 
                     {/* Sitemap */}
