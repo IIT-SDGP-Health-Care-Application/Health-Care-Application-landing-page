@@ -76,19 +76,19 @@ const Hero: React.FC = () => {
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.6, delay: 1.2, ease: "easeOut"}}
                     >
-                        {/* Download Button */}
-                        <motion.button
-                            className="bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl flex items-center gap-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"
-                            whileHover={{scale: 1.05, y: -2}}
-                            whileTap={{scale: 0.98}}
-                        >
-                            <div className="flex items-center gap-2">
-                                <img src={appleLogo.src} width={20}/>
-                                <span className="text-gray-400">|</span>
-                                <img src={androidLogo.src} width={20}/>
-                            </div>
-                            <span>Download Now</span>
-                        </motion.button>
+                        {/*/!* Download Button *!/*/}
+                        {/*<motion.button*/}
+                        {/*    className="bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl flex items-center gap-3 font-semibold transition-all duration-200 shadow-lg hover:shadow-xl w-full sm:w-auto justify-center"*/}
+                        {/*    whileHover={{scale: 1.05, y: -2}}*/}
+                        {/*    whileTap={{scale: 0.98}}*/}
+                        {/*>*/}
+                        {/*    <div className="flex items-center gap-2">*/}
+                        {/*        <img src={appleLogo.src} width={20}/>*/}
+                        {/*        <span className="text-gray-400">|</span>*/}
+                        {/*        <img src={androidLogo.src} width={20}/>*/}
+                        {/*    </div>*/}
+                        {/*    <span>Download Now</span>*/}
+                        {/*</motion.button>*/}
                     </motion.div>
                 </motion.div>
 
